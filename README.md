@@ -1,14 +1,13 @@
 # KubernetsSimpleApplication
 This project demonstrates the orchestration of a full-stack application environment using Kubernetes.
+It features a decoupled architecture consisting of a web application and a persistent database, managed locally via Minikube.
 
-Technical Implementation
+The goal of this project is to implement core Kubernetes concepts, including:
 
-    Cluster Management: Local cluster provisioning using Minikube.
+    Deployment & Scaling: Managing application lifecycles and replicas.
 
-    Workload Orchestration: YAML-based deployments for both the application and the database.
+    Service Discovery: Enabling communication between the app and the database using internal ClusterIPs.
 
-    Networking: Exposing the application via NodePort and securing internal database traffic via ClusterIP.
+    Persistence: Implementing PersistentVolumes (PV) and PersistentVolumeClaims (PVC) to ensure data durability.
 
-    Storage: Decoupled storage logic using PersistentVolumeClaims to handle database state.
-
-    CLI Mastery: Managed entirely via kubectl for resource creation, debugging, and log monitoring.
+    Configuration Management: Using ConfigMaps and Secrets for environment variables and credentials.
