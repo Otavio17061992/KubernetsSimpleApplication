@@ -16,14 +16,21 @@ spec:
     spec:
       containers:
       - name: sqlserver
-        image: mcr.microsoft.com/mssql/sqlserver:2022-latest
+        image: mcr.microsoft.com/mssql/server:2022-latest
         ports:
         - containerPort: 1433
         env:
         - name: ACCEPT_EULA
-          value: "Y"
+          valueFrom:
+            secretKeyRef:
+              name: sqlserver-secret
+              key: sqlserver-user
         - name: MSSQL_SA_PASSWORD
-          value: "sqlserver2026"
+          valueFrom:
+            secretKeyRef:
+              name: sqlserver-secret
+              key: sqlserver-password
+
 
 ---
 
